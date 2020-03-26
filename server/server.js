@@ -41,8 +41,6 @@ app.listen(port, function(error) {
   if (error) {
     console.error(error);
   } else {
-    console.info(
-      `==> 🌎  Listening on port ${port}. Open up http://localhost:${port}/ in your browser.`
-    );
+    console.info(`==> 🌎  Listening on port ${port}.`);
   }
 });

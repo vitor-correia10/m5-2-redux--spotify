@@ -34,3 +34,9 @@ SPOTIFY_SECRET=YOUR_KEY_HERE
 ```
 
 Replace "YOUR_KEY_HERE" with the keys provided from Spotify
+
+## Initial state
+
+## Setup
+
+- Add proxy to package.json, `"proxy": "http://localhost:5678",`

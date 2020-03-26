@@ -1,30 +1,28 @@
 import React from 'react';
-import styled from 'styled-components';
-import 'focus-visible';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from 'react-router-dom';
 
-import avatar from '../../assets/carmen-sandiego.png';
+import ArtistDetails from '../ArtistDetails';
+import GlobalStyles from '../GlobalStyles/GlobalStyles';
 
-import Tweet from '../Tweet';
+const DEFAULT_ARTIST_ID = '2CIMQHirSU0MQqyYHq0eOx';
 
 const App = () => {
   return (
-    <Wrapper>
-      <Tweet
-        tweetContents="Where in the world am I?"
-        displayName="Carmen Sandiego ✨"
-        username="carmen-sandiego"
-        avatarSrc={avatar}
-        timestamp={new Date()}
-      />
-    </Wrapper>
+    <Router>
+      <Switch>
+        <Route path="/artist/:artistId">
+          <ArtistDetails />
+        </Route>
+        {/* <Redirect to={`/artist/${DEFAULT_ARTIST_ID}`} /> */}
+      </Switch>
+      <GlobalStyles />
+    </Router>
   );
 };
 
-const Wrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: #eee;
-`;
 export default App;
