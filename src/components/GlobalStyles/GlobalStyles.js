@@ -38,8 +38,8 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    color: var(--color-text);
-    background: var(--color-background);
+    color: var(--color-white);
+    background: var(--color-charcoal);
     overflow-x: hidden;
   }
 
@@ -86,24 +86,18 @@ const GlobalStyles = createGlobalStyle`
     color: white;
   }
 
-  @media (orientation: landscape) {
-    ::-webkit-scrollbar {
-      width: 12px;
-      background-color: var(--color-gray-100);
-    }
-    ::-webkit-scrollbar-track {
-      border-radius: 3px;
-      background-color: transparent;
-    }
-    ::-webkit-scrollbar-thumb {
-      border-radius: 5px;
-      background-color: var(--color-gray-700);
-      border: 2px solid var(--color-gray-100);
-    }
-  }
-
   :root {
-    --color-primary: ;
+    --color-primary: hsl(313deg, 100%, 65%);
+    --color-secondary: hsl(230deg, 100%, 60%);
+    --color-white: hsl(0deg, 0%, 100%);
+    --color-silver: hsl(213deg, 5%, 100%);
+    --color-charcoal: hsl(213deg, 30%, 6%);
+    --color-gray-fade: hsla(0deg, 0%, 30%, 0.4);
+
+    --triple-shadow:
+      2px 1px 2px rgba(0, 0, 0, 0.75),
+      4px 0px 4px rgba(0, 0, 0, 0.5),
+      25px 4px 8px rgba(0, 0, 0, 1);
   }
 `;
 

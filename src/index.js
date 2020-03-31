@@ -1,12 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+
+import configureStore from './store';
 
 import App from './components/App';
-import { TokenProvider } from './components/TokenContext';
+
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
+
+const store = configureStore();
 
 ReactDOM.render(
-  <TokenProvider>
+  <Provider store={store}>
     <App />
-  </TokenProvider>,
+  </Provider>,
   document.getElementById('root')
 );
