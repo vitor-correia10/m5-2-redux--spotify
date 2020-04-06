@@ -15,7 +15,6 @@ const TopTracks = ({ tracks }) => {
           <PlayButton
             key={track.id}
             url={track.preview_url}
-            audioFormat="mp3"
             active={playing === track.id}
             play={() => setPlaying(track.id)}
             stop={() => setPlaying(null)}

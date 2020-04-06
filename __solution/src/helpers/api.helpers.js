@@ -5,7 +5,7 @@ export function fetchRelatedArtists(token, artistId) {
 }
 
 export function fetchTopTracks(token, artistId) {
-  return fetchFromApi(token, `/artists/${artistId}/top-tracks?country=US`);
+  return fetchFromApi(token, `/artists/${artistId}/top-tracks?country=CA`);
 }
 
 export function fetchSearchResults(token, q, type = 'artist') {
