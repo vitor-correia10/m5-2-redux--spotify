@@ -476,11 +476,11 @@ Here's our starting point, without Redux:
 // Inside App.js
 React.useEffect(() => {
   fetch('/spotify_access_token')
-    .then(res => res.json())
-    .then(json => {
+    .then((res) => res.json())
+    .then((json) => {
       console.log(json);
     })
-    .catch(err => {
+    .catch((err) => {
       console.error(err);
     });
 }, []);
@@ -499,7 +499,7 @@ export const requestAccessToken = () => ({
   type: 'REQUEST_ACCESS_TOKEN',
 });
 
-export const receiveAccessToken = token => ({
+export const receiveAccessToken = (token) => ({
   type: 'RECEIVE_ACCESS_TOKEN',
   token,
 });
@@ -576,7 +576,7 @@ Use the `useSelector` hook from the `react-redux` package to select it:
 ```js
 // ArtistRoute.js
 const ArtistRoute = () => {
-  const accessToken = useSelector(state => state.auth.token);
+  const accessToken = useSelector((state) => state.auth.token);
 
   return accessToken;
 };
@@ -614,7 +614,7 @@ export function fetchArtistProfile(token, artistId) {
 
   const url = `https://api.spotify.com/v1/artists/${artistId}`;
 
-  return fetch(url, options).then(response => response.json());
+  return fetch(url, options).then((response) => response.json());
 }
 ```
 
@@ -739,13 +739,16 @@ Once the data is in your Redux store, use `useSelector` to fetch the `currentArt
 
 Spend some time rendering this to the screen. Don't worry about styles yet, but do focus on good component structure / semantic HTML.
 
-> Remember, the first time this renders, you won't have an artist yet! You can render a fallback, like the text "Loading...", until you have an artist you can use.
+You will need to manipulate the data somewhat, in the following ways:
 
-Select _only the first 2 genres_. The Spotify API might return many more.
+1. You only want to show the first 2 genres. The Spotify API might return many more.
+2. We should show a "short version" for the # of followers. Instead of displaying "2451376 followers", we should say "2M followers". Instead of "12345" followers, "12K followers". Feel free to write a utility function for this, or search for a pre-existing solution online.
 
 In the end, you should have something like this:
 
 <img src="./__lecture/assets/initial-profile.png" alt="Finished app" />
+
+> Remember, the first time this renders, you won't have an artist yet! You can render a fallback, like the text "Loading...", until you have an artist you can use.
 
 ---
 
