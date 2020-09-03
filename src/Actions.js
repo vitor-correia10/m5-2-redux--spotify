@@ -10,3 +10,17 @@ export const receiveAccessToken = token => ({
 export const receiveAccessTokenError = () => ({
     type: "RECEIVE_ACCESS_TOKEN_ERROR",
 });
+
+export const receiveSuccessfulData = () => ({
+    type: "RECEIVE_ALL_DATA",
+});
+
+export const receiveArtistData = json => ({
+    type: 'RECEIVE_ARTIST_DATA',
+    artist: json,
+});
+
+export const receiveDataERROR = () => ({
+    type: "RECEIVE_DATA_ERROR",
+});
+

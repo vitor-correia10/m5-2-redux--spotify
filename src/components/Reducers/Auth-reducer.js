@@ -4,7 +4,6 @@ const initialState = {
 };
 
 export default function Auth(state = initialState, action) {
-    console.log('Auth', state)
     switch (action.type) {
         case 'REQUEST_ACCESS_TOKEN': {
             return {

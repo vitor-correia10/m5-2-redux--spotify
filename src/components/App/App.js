@@ -30,10 +30,9 @@ const App = () => {
     const fetchArtists = async () => {
       try {
         const response = await fetch('/spotify_access_token');
-        const artists = await response.json();
+        const data = await response.json();
 
-        dispatch(receiveAccessToken(artists.access_token));
-        console.log(artists);
+        dispatch(receiveAccessToken(data.access_token));
 
       } catch (err) {
         dispatch(receiveAccessTokenError());
@@ -49,7 +48,7 @@ const App = () => {
         <Route exact path="/">
           <Redirect to="/artists/${DEFAULT_ARTIST_ID}" />
         </Route>
-        <Route path="/artists/:id">
+        <Route path="/artists/:artistId">
           <ArtistRoute />
         </Route>
       </Switch>

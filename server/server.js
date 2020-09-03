@@ -28,8 +28,6 @@ app.get('/spotify_access_token', async (req, res, next) => {
     body: 'grant_type=client_credentials',
   });
 
-  console.log(authString);
-
   const json = await response.json();
   return res.send(json);
 });
